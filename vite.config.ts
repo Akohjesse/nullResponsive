@@ -32,6 +32,8 @@ export default defineConfig({
       scss:{
         additionalData: `
         @import "./src/style/_mixins.scss";
+        @import "./src/style/_responsive.scss";
+
         `
       }
     }
