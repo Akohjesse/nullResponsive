@@ -4,7 +4,7 @@ import nullresponsive from "./components/ nullResponsive.vue";
 
 <template>
   <div>
-    <nullresponsive />
+    <nullresponsive :breakpoint="1000" input-text="i don tire"></nullresponsive>
   </div>
 </template>
 
