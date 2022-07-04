@@ -2,20 +2,19 @@
   <div v-if="showScreen" class="wrap">
     <div class="null_container">
       <div class="img_placeholder">
-        <img :src="getUrl(config.imgPath)" alt="" />
+        <img :src="getUrl(customConfig.imgPath)" alt="" />
       </div>
-      <h2 v-html="config.inputText"></h2>
+      <h2 v-html="customConfig.inputText"></h2>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import '/node_modules/null-responsive/dist/style.css';
-import { ref } from "@vue/reactivity";
-import { onMounted } from "@vue/runtime-core";
+import { reactive, ref } from "@vue/reactivity";
+import { inject, onMounted } from "@vue/runtime-core";
 const showScreen = ref(false);
 const props = defineProps<{
-  config: {
+  config?: {
     inputText: string;
     imgPath: string;
     breakpoint: number;
@@ -23,6 +22,9 @@ const props = defineProps<{
     text_color: string;
   };
 }>();
+
+const configNull = inject("useNull") as object;
+const customConfig = props.config ?? configNull;
 
 const showSplashScreen = (breakpoint: number) => {
   if (window.innerWidth <= breakpoint) {
@@ -37,9 +39,10 @@ const getUrl = (image: string) => {
 };
 
 onMounted(() => {
-  showSplashScreen(props.config.breakpoint);
+  console.log(customConfig);
+  showSplashScreen(customConfig.breakpoint);
   window.addEventListener("resize", () => {
-    showSplashScreen(props.config.breakpoint);
+    showSplashScreen(customConfig.breakpoint);
   });
 });
 </script>
@@ -49,7 +52,7 @@ onMounted(() => {
   position: fixed;
   height: 100vh;
   z-index: 1000;
-  background-color: v-bind("props.config.bg_color");
+  background-color: v-bind("customConfig.bg_color");
   top: 0;
   left: 0;
   right: 0;
@@ -69,14 +72,14 @@ onMounted(() => {
       font-size: 2.9em;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      color: v-bind("props.config.text_color");
-      @media screen and (max-width:868px) {
+      color: v-bind("customConfig.text_color");
+      @media screen and (max-width: 868px) {
         font-size: 2.6em;
       }
-      @media screen and (max-width:600px) {
+      @media screen and (max-width: 600px) {
         font-size: 2.2em;
       }
-      @media screen and (max-width:480px){
+      @media screen and (max-width: 480px) {
         font-size: 1.5em;
       }
     }

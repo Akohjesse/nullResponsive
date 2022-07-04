@@ -1,12 +1,11 @@
-import type { App} from "vue"
+import type { App } from "vue";
 import { nullResponsive } from "./components";
 
 export default {
-    install: (app: App)=>{
-        app.component("nullResponsive", nullResponsive)
-    }
-}
+  install: (app: App, options: {}) => {
+    app.component("nullResponsive", nullResponsive);
+    app.provide("useNull", options);
+  },
+};
 
-
-
-export { nullResponsive};
+export { nullResponsive };
