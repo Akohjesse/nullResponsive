@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import nullresponsive from './components/ nullResponsive.vue';
+import nullresponsive from "./components/ nullResponsive.vue";
 </script>
 
 <template>
- <div>
-  <nullresponsive/>
- </div>
+  <div>
+    <nullresponsive />
+  </div>
 </template>
 
-<style>
-</style>
+<style></style>
