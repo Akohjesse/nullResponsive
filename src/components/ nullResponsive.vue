@@ -69,13 +69,13 @@ onMounted(() => {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       color: v-bind("props.config.text_color");
-      @include media("<=tablet") {
+      @media screen and (max-width:868px) {
         font-size: 2.6em;
       }
-      @include media("<=phone-tab") {
+      @media screen and (max-width:600px) {
         font-size: 2.2em;
       }
-      @include media("<=phone") {
+      @media screen and (max-width:480px){
         font-size: 1.5em;
       }
     }
