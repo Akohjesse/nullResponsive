@@ -12,7 +12,7 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/components/index.js"),
+      entry: path.resolve(__dirname, "src/components/index.ts"),
       name: "nullResponsive",
       fileName: (format) => `null-responsive.${format}.js`,
     },

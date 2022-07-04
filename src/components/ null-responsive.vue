@@ -10,6 +10,7 @@
 </template>
 
 <script lang="ts" setup>
+import '/node_modules/null-responsive/dist/style.css';
 import { ref } from "@vue/reactivity";
 import { onMounted } from "@vue/runtime-core";
 const showScreen = ref(false);

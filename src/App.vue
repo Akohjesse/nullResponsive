@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import Nullresponsive from "./components/ nullResponsive.vue";
-
+// import Nullresponsive from "./components/ null-responsive.vue";
 const nullconfig = {
   inputText: "input text",
-  imgPath: "logo.svg",
   breakpoint: 1000,
   bg_color: "purple",
   text_color: "white",
@@ -12,7 +10,7 @@ const nullconfig = {
 
 <template>
   <div>
-    <Nullresponsive :config="nullconfig" />
+    <nullResponsive :config="nullconfig" />
   </div>
 </template>
 
