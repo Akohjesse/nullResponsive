@@ -2,9 +2,9 @@
   <div v-if="showScreen" class="wrap">
     <div class="null_container">
       <div class="img_placeholder">
-        <img alt="" />
+        <img :src="getUrl(config.imgPath)" alt="" />
       </div>
-      <h2 v-html="inputText"></h2>
+      <h2 v-html="config.inputText"></h2>
     </div>
   </div>
 </template>
@@ -14,12 +14,13 @@ import { ref } from "@vue/reactivity";
 import { onMounted } from "@vue/runtime-core";
 const showScreen = ref(false);
 const props = defineProps<{
-  inputText: string;
-  imgPath: {
-    type: string;
-    required: true;
+  config: {
+    inputText: string;
+    imgPath: string;
+    breakpoint: number;
+    bg_color: string;
+    text_color: string;
   };
-  breakpoint: number;
 }>();
 
 const showSplashScreen = (breakpoint: number) => {
@@ -30,10 +31,14 @@ const showSplashScreen = (breakpoint: number) => {
   }
 };
 
+const getUrl = (image: string) => {
+  return new URL(`../assets/${image}`, import.meta.url).href;
+};
+
 onMounted(() => {
-  showSplashScreen(props.breakpoint);
+  showSplashScreen(props.config.breakpoint);
   window.addEventListener("resize", () => {
-    showSplashScreen(props.breakpoint);
+    showSplashScreen(props.config.breakpoint);
   });
 });
 </script>
@@ -43,7 +48,7 @@ onMounted(() => {
   position: fixed;
   height: 100vh;
   z-index: 1000;
-  background-color: black;
+  background-color: v-bind("props.config.bg_color");
   top: 0;
   left: 0;
   right: 0;
@@ -63,7 +68,7 @@ onMounted(() => {
       font-size: 2.9em;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      color: white;
+      color: v-bind("props.config.text_color");
       @include media("<=tablet") {
         font-size: 2.6em;
       }

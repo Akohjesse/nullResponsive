@@ -7,6 +7,9 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  server:{
+     host: true
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/components/index.js"),
