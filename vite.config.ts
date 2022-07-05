@@ -30,7 +30,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, "src/nullResponsive.ts"),
       formats: ["es", "cjs"],
-      name: "null-responsive",
+      name: "null-responsive-vue",
       fileName: (format) => (format === "es" ? "index.js" : "index.cjs"),
     },
     rollupOptions: {
