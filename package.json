@@ -1,12 +1,12 @@
 {
   "name": "null-responsive-vue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "repository": "https://github.com/Akohjesse/nullResponsive",
-  "exports":{
-    ".":"./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
     "./styles.css": "./dist/style.css"
   },
   "browser": {
