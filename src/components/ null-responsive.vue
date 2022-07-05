@@ -22,7 +22,7 @@ const props = defineProps<{
   config?: {
     inputText: string;
     imgPath?: string;
-    breakpoint: number;
+    breakpoint?: number;
     imglink?: string;
     bg_color?: string;
     text_color?: string;
@@ -32,12 +32,21 @@ const props = defineProps<{
 const configNull = inject("useNull") as any;
 const customConfig = props.config ?? configNull;
 
-const showSplashScreen = (breakpoint: number) => {
-  if (window.innerWidth <= breakpoint) {
+const showSplashScreen = () => {
+ if(customConfig.breakpoint){
+   if (window.innerWidth <= customConfig.breakpoint) {
     showScreen.value = true;
   } else {
     showScreen.value = false;
   }
+ }
+ else{
+     if (window.innerWidth <= 1000) {
+    showScreen.value = true;
+  } else {
+    showScreen.value = false;
+  }
+ }
 };
 
 const getUrl = () => {
@@ -49,9 +58,9 @@ const getUrl = () => {
 };
 
 onMounted(() => {
-  showSplashScreen(customConfig.breakpoint);
+  showSplashScreen();
   window.addEventListener("resize", () => {
-    showSplashScreen(customConfig.breakpoint);
+    showSplashScreen();
   });
 });
 </script>
