@@ -10,8 +10,8 @@
 </template>
 
 <script lang="ts" setup>
-import { reactive, ref } from "@vue/reactivity";
-import { inject, onMounted } from "@vue/runtime-core";
+import { ref } from "vue";
+import { inject, onMounted } from "vue";
 const showScreen = ref(false);
 const props = defineProps<{
   config?: {
@@ -23,7 +23,7 @@ const props = defineProps<{
   };
 }>();
 
-const configNull = inject("useNull") as object;
+const configNull = inject("useNull") as any;
 const customConfig = props.config ?? configNull;
 
 const showSplashScreen = (breakpoint: number) => {
@@ -39,7 +39,7 @@ const getUrl = (image: string) => {
 };
 
 onMounted(() => {
-  console.log(customConfig);
+  console.log(typeof customConfig.bg_color)
   showSplashScreen(customConfig.breakpoint);
   window.addEventListener("resize", () => {
     showSplashScreen(customConfig.breakpoint);

@@ -1,19 +1,17 @@
 {
   "name": "null-responsive",
   "version": "0.0.1",
-  "files": ["dist"],
-  "main": "./dist/null-responsive.umd.js",
-  "module": "./dist/null-responsive.es.js",
+  "type": "module",
   "exports":{
-    ".":{
-      "import":"./dist/null-responsive.es.js",
-      "require": "./dist/null-responsive.umd.js"
-    }
+    ".":"./dist/index.js",
+    "./styles.css": "./dist/style.css"
   },
-  "types": "./dist/types/index.d.ts",
+  "browser": {
+    "./styles.css": "./dist/style.css"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview --port 4173",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
@@ -21,12 +19,12 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "vue": "^3.2.37",
-    "null-responsive":"null-responsive-0.0.1.tgz"
+    "rollup-plugin-typescript2": "^0.32.1",
+    "vue": "^3.2.37"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",
-    "@types/node": "^16.11.43",
+    "@types/node": "^16.11.41",
     "@vitejs/plugin-vue": "^2.3.3",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.0",
