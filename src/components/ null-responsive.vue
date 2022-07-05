@@ -2,12 +2,12 @@
   <div v-if="showScreen" class="wrap">
     <div class="npm-link">
       <a href="https://github.com/Akohjesse/nullResponsive">
-        <h3>null<span class="re">R</span>esponsive</h3>
+        <h3>nullResponsive</h3>
       </a>
     </div>
     <div class="null_container">
       <div class="img_placeholder">
-        <img :src="getUrl(customConfig.imgPath)" alt="" />
+        <img :src="getUrl()" alt="" />
       </div>
       <h2 v-html="customConfig.inputText"></h2>
     </div>
@@ -19,10 +19,11 @@ import { ref, onMounted } from "vue";
 import { inject } from "vue";
 const showScreen = ref(false);
 const props = defineProps<{
-  config: {
+  config?: {
     inputText: string;
     imgPath?: string;
     breakpoint: number;
+    imglink?: string;
     bg_color?: string;
     text_color?: string;
   };
@@ -39,8 +40,12 @@ const showSplashScreen = (breakpoint: number) => {
   }
 };
 
-const getUrl = (image_dir: string) => {
-  return new URL(image_dir, import.meta.url).href;
+const getUrl = () => {
+  if (customConfig.imglink) {
+    return customConfig.imglink;
+  } else if (customConfig.imgPath) {
+    return new URL(`/src/assets/${customConfig.imgPath}`, import.meta.url).href;
+  }
 };
 
 onMounted(() => {

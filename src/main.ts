@@ -5,7 +5,7 @@ const nullconfig = {
   inputText:
     "This is the face of a lazy developer, still working on the mobile view mfjpm🙏🏽",
   breakpoint: 1000,
-  imgPath: "../assets/img.jpeg",
+  imgPath: "img.jpeg",
   bg_color: "lavender",
   text_color: "grey",
 };
