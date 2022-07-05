@@ -33,20 +33,19 @@ const configNull = inject("useNull") as any;
 const customConfig = props.config ?? configNull;
 
 const showSplashScreen = () => {
- if(customConfig.breakpoint){
-   if (window.innerWidth <= customConfig.breakpoint) {
-    showScreen.value = true;
+  if (customConfig.breakpoint) {
+    if (window.innerWidth <= customConfig.breakpoint) {
+      showScreen.value = true;
+    } else {
+      showScreen.value = false;
+    }
   } else {
-    showScreen.value = false;
+    if (window.innerWidth <= 1000) {
+      showScreen.value = true;
+    } else {
+      showScreen.value = false;
+    }
   }
- }
- else{
-     if (window.innerWidth <= 1000) {
-    showScreen.value = true;
-  } else {
-    showScreen.value = false;
-  }
- }
 };
 
 const getUrl = () => {
