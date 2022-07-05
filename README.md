@@ -52,8 +52,8 @@ Pass in the Config props to the component when you place it in <b>any</b> of you
 Or you can pass in the config options when installing in your main ts or js file
 <br>
   
-```vue
-       
+```js
+   // main.js
    const nullconfig = {
     inputText: "This is the face of a lazy developer, still working on the mobile view mfjpm🙏🏽",
     breakpoint: 1000,
@@ -62,6 +62,5 @@ Or you can pass in the config options when installing in your main ts or js file
     text_color: "grey",
 };
    Vue.use(nullResponsive, nullConfig)
-   
 ```
 
