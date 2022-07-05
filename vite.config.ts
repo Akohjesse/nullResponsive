@@ -3,7 +3,7 @@ import { fileURLToPath, URL } from "url";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import typescript2 from "rollup-plugin-typescript2";
-
+import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -24,7 +24,7 @@ export default defineConfig({
   build: {
     cssCodeSplit: false,
     lib: {
-      entry: "./src/nullResponsive.ts",
+      entry: path.resolve(__dirname, 'src/nullResponsive.ts'),
       formats: ["es", "cjs"],
       name: "nullResponsive",
       fileName: (format) => (format === "es" ? "index.js" : "index.cjs"),
