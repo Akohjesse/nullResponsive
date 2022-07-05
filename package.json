@@ -2,12 +2,21 @@
   "name": "null-responsive",
   "version": "0.0.1",
   "type": "module",
+  "repository": "https://github.com/Akohjesse/nullResponsive",
   "exports":{
     ".":"./dist/index.js",
     "./styles.css": "./dist/style.css"
   },
   "browser": {
     "./styles.css": "./dist/style.css"
+  },
+  "types": "./dist/nullResponsive.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": {
+    "name": "Jesse Akoh",
+    "url": "https://akohjesse.com"
   },
   "scripts": {
     "dev": "vite",
