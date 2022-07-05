@@ -17,7 +17,7 @@
 ### Install in your main ts or js file
 
 ```jsx
-  import nullResponsive from "null-responsive-vue".   // import base css file
+  import nullResponsive from "null-responsive-vue"   // import base css file
   
   import "null-responsive-vue/styles.css"
   
