@@ -73,7 +73,7 @@ onMounted(() => {
   border-block: box-sizing;
 }
 .wrap {
-  position: fixed;
+  position: sticky;
   height: 100vh;
   z-index: 1000;
   background-color: v-bind("customConfig.bg_color");
