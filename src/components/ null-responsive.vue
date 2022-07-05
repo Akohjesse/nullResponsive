@@ -10,8 +10,8 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-import { inject, onMounted } from "vue";
+import { ref, onMounted } from "vue";
+import { inject} from "vue";
 const showScreen = ref(false);
 const props = defineProps<{
   config?: {
