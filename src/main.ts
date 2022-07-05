@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import nullResponsive from "./nullResponsive";
-const nullconfig = {
+const nullconfig ={
   inputText: "input text",
   breakpoint: 1000,
   bg_color: "purple",
