@@ -3,7 +3,7 @@
 <div align="left">
   <img width="500px" src="https://github.com/Akohjesse/nullResponsive/blob/main/src/assets/logo.png?raw=true">
   <br>
-  <h3>For times where you are either lazy to write media queries or you don't have a need for a mobile adaptive website</h3> 
+  <h3>For times where you are either lazy to write media queries or you don't have need for a mobile adaptive website</h3> 
 </div>
 <br>
 
@@ -80,5 +80,26 @@ The props passed determines the splash screen that'd be displayed. Here's a tabl
 | text_color | Sets the text color of the text content on the splash screen | *`string`* | *`black`*|
 | imgPath | Adds a custom image to the content of the splash screen from the *`assets`* folder in the vue app. In usage it looks in the assets folder for the image e.g `imgPath: "splash.png"` | *`string`* | none|
 | imglink | To be used when using external images not in your vue app e.g <br> `imglink: "https://res.cloudinary.com/ferventdev/image/upload/.../jesse.svg"` | *`string`* | none|
+<br>
 
 
+## 👷🏽 Contribution Guide
+
+If you see any usecase or feature you'd like to explore & add to it, you can contribute by:
+
+1. Forking this repository.
+2. Clone the forked repository to your local machine.
+3. Create a new branch with a name like this -feature/name-of-feature.
+4. Run `npm` to install dependencies.
+5. Write code and then commit changes.
+6. Run `npm run build` to compile a build into the dist folder.
+7. To test the feature or bug you've coded run ` npm link ` in your nullResponsive cloned root folder
+8. On the local project you want to test the features on, run ` npm link null-responsive-vue`.
+9. Now navigate back to the terminal on your cloned nullResponsive folder and then run `npm link ../path-to-test-project/node_modules/vue`. Now you can test your changes.
+10. After all is done, push to your forked repository and then send a pull request.
+
+<br>
+
+## ⚖️ Licence
+
+MIT (c) [Jesse Akoh](https://akohjesse.com).
