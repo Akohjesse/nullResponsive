@@ -6,6 +6,9 @@ import typescript2 from "rollup-plugin-typescript2";
 import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
+  server:{
+    host:true
+  },
   plugins: [
     vue(),
     typescript2({

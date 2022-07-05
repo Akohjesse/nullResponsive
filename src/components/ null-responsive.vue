@@ -1,5 +1,10 @@
 <template>
   <div v-if="showScreen" class="wrap">
+    <div class="npm-link">
+      <a href="https://github.com/Akohjesse/nullResponsive">
+        <h3>null<span class="re">R</span>esponsive</h3>
+      </a>
+    </div>
     <div class="null_container">
       <div class="img_placeholder">
         <img :src="getUrl(customConfig.imgPath)" alt="" />
@@ -11,15 +16,15 @@
 
 <script lang="ts" setup>
 import { ref, onMounted } from "vue";
-import { inject} from "vue";
+import { inject } from "vue";
 const showScreen = ref(false);
 const props = defineProps<{
-  config?: {
+  config: {
     inputText: string;
-    imgPath: string;
+    imgPath?: string;
     breakpoint: number;
-    bg_color: string;
-    text_color: string;
+    bg_color?: string;
+    text_color?: string;
   };
 }>();
 
@@ -34,12 +39,11 @@ const showSplashScreen = (breakpoint: number) => {
   }
 };
 
-const getUrl = (image: string) => {
-  return new URL(`../assets/${image}`, import.meta.url).href;
+const getUrl = (image_dir: string) => {
+  return new URL(image_dir, import.meta.url).href;
 };
 
 onMounted(() => {
-  console.log(typeof customConfig.bg_color)
   showSplashScreen(customConfig.breakpoint);
   window.addEventListener("resize", () => {
     showSplashScreen(customConfig.breakpoint);
@@ -47,7 +51,14 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@700&family=Josefin+Sans:wght@700&display=swap");
+* {
+  margin: 0px;
+  font-family: "Josefin sans";
+  padding: 0;
+  border-block: box-sizing;
+}
 .wrap {
   position: fixed;
   height: 100vh;
@@ -57,6 +68,17 @@ onMounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
+  .npm-link {
+    position: absolute;
+    bottom: 0;
+    a {
+      text-decoration: none;
+      h3 {
+        color: v-bind("customConfig.text_color");
+      }
+      font-size: 18px;
+    }
+  }
   .null_container {
     height: 100%;
     width: 100%;
@@ -69,16 +91,10 @@ onMounted(() => {
       }
     }
     h2 {
-      font-size: 2.9em;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      font-size: 2.2em;
+      padding: 0 2rem;
+      text-align: center;
       color: v-bind("customConfig.text_color");
-      @media screen and (max-width: 868px) {
-        font-size: 2.6em;
-      }
-      @media screen and (max-width: 600px) {
-        font-size: 2.2em;
-      }
       @media screen and (max-width: 480px) {
         font-size: 1.5em;
       }

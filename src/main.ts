@@ -1,11 +1,13 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import nullResponsive from "./nullResponsive";
-const nullconfig ={
-  inputText: "input text",
+const nullconfig = {
+  inputText:
+    "This is the face of a lazy developer, still working on the mobile view mfjpm🙏🏽",
   breakpoint: 1000,
-  bg_color: "purple",
-  text_color: "white",
+  imgPath: "../assets/img.jpeg",
+  bg_color: "lavender",
+  text_color: "grey",
 };
 
 createApp(App).use(nullResponsive, nullconfig).mount("#app");
