@@ -24,10 +24,9 @@
   Vue.use(nullResponsive) // install globally
 ```
 <br>
-<br>
 
 ##  🛠 Config 
-As a highly customizable package, you'd have to pass in the Config props to the component when you place it in <b>any</b> of your vue files
+Pass in the Config props to the component when you place it in <b>any</b> of your vue files
 
 ```vue
   <template>
@@ -39,8 +38,8 @@ As a highly customizable package, you'd have to pass in the Config props to the 
           data(){
               return {
                        nullconfig : {
-                          inputText: "Mafejo pa mi 🙏🏽",
-                          imgPath: "logo.png",
+                          inputText: "This is the face of a lazy developer, still working on the mobile view",
+                          imglink: "https://c.tenor.com/fkPxqJwOVhoAAAAM/qforce-stat.gif",
                           breakpoint: 1000,
                           bg_color: "lavender",
                           text_color: "grey",
@@ -48,5 +47,21 @@ As a highly customizable package, you'd have to pass in the Config props to the 
                }
          }
    </script>
+```
+<br>
+Or you can pass in the config options when installing in your main ts or js file
+<br>
+  
+```vue
+       
+   const nullconfig = {
+    inputText: "This is the face of a lazy developer, still working on the mobile view mfjpm🙏🏽",
+    breakpoint: 1000,
+    imgPath: "img.jpeg",
+    bg_color: "lavender",
+    text_color: "grey",
+};
+   Vue.use(nullResponsive, nullConfig)
+   
 ```
 
