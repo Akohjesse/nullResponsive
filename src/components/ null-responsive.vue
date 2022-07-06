@@ -74,8 +74,8 @@ onMounted(() => {
 }
 .wrap {
   position: fixed;
-  height: 100vw;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   z-index: 1000;
   background-color: v-bind("customConfig.bg_color");
   top: 0;
