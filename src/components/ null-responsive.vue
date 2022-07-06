@@ -36,14 +36,12 @@ const showSplashScreen = () => {
   if (customConfig.breakpoint) {
     if (window.innerWidth <= customConfig.breakpoint) {
       showScreen.value = true;
-        document.querySelector("body").style="overflow:hidden";
     } else {
       showScreen.value = false;
     }
   } else {
     if (window.innerWidth <= 1000) {
       showScreen.value = true;
-        document.querySelector("body").style="overflow:hidden";
     } else {
       showScreen.value = false;
     }
