@@ -11,3 +11,4 @@ const nullconfig = {
 };
 
 createApp(App).use(nullResponsive, nullconfig).mount("#app");
+
