@@ -52,7 +52,7 @@ const getUrl = () => {
   if (customConfig.imglink) {
     return customConfig.imglink;
   } else if (customConfig.imgPath) {
-    return new URL(`/src/assets/${customConfig.imgPath}`, import.meta.url).href;
+    return new URL(`/src/${customConfig.imgPath}`, import.meta.url).href;
   }
 };
 
@@ -73,15 +73,15 @@ onMounted(() => {
   border-block: box-sizing;
 }
 .wrap {
-position: fixed;
-height: 100vh;
+  position: fixed;
+  height: 100vh;
   z-index: 1000;
   background-color: v-bind("customConfig.bg_color");
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  overflow:hidden ;
+  overflow: hidden;
   .npm-link {
     position: absolute;
     bottom: 0;
