@@ -8,6 +8,15 @@
     "type": "git",
     "url": "https://github.com/Akohjesse/nullResponsive.git"
   },
+  "keywords": [
+    "vue",
+    "vue-plugin",
+    "frontend",
+    "component",
+    "vue component",
+    "responsive web design",
+    "splash screen"
+  ],
   "exports": {
     ".": "./dist/index.js",
     "./styles.css": "./dist/style.css"
