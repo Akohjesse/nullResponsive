@@ -4,6 +4,12 @@
   <img width="500px" src="https://github.com/Akohjesse/nullResponsive/blob/main/src/assets/logo.png?raw=true">
   <br>
   <h3>For times where you are either lazy to write media queries or you don't have need for a mobile adaptive website</h3> 
+  <br>
+  
+   nullResponsive is a customizable splash screen that replaces your sites view when breakpoints (mobile | desktop) are reached, essentially covering the mess your site is without media queries
+   <br>
+   <br>
+  <img src="https://github.com/Akohjesse/nullResponsive/blob/main/src/assets/screenshot.png?raw=true">
 </div>
 <br>
 
