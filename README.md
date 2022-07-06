@@ -31,6 +31,7 @@
 ```
 <br>
 
+
 ##  🛠 Config 
 Pass in the Config props to the component when you place it in <b>any</b> of your vue files
 
@@ -88,6 +89,10 @@ The props passed determines the splash screen that'd be displayed. Here's a tabl
 | imglink | To be used when using external images not in your vue app e.g <br> `imglink: "https://res.cloudinary.com/ferventdev/image/upload/.../jesse.svg"` | *`string`* | none|
 <br>
 
+## Issues
+If you experience any anomaly or bug while using the component, feel free to create an issue on this repo
+[issues](https://github.com/Akohjesse/nullResponsive/issues/new/choose)
+<br>
 
 ## 👷🏽 Contribution Guide
 
