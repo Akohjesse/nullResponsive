@@ -57,6 +57,7 @@ const getUrl = () => {
 };
 
 onMounted(() => {
+  document.querySelector("body").style="overflow:hidden";
   showSplashScreen();
   window.addEventListener("resize", () => {
     showSplashScreen();
@@ -82,6 +83,7 @@ onMounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
+  overflow:hidden ;
   .npm-link {
     position: absolute;
     bottom: 0;
