@@ -66,7 +66,7 @@ Or you can pass in the config options when installing in your main ts or js file
    const nullconfig = {
     inputText: "This is the face of a lazy developer, still working on the mobile view mfjpm🙏🏽",
     breakpoint: 1000,
-    imgPath: "./assets/img.jpeg",
+    imgPath: "/src/assets/img.jpeg",
     bg_color: "#e6e6fb",
     text_color: "#858586",
 };
@@ -85,7 +85,7 @@ The props passed determines the splash screen that'd be displayed. Here's a tabl
 | breakpoint | Sets the breakpoint at which the splash screen comes in px up  e.g. `1000` | *`number`* | *`1000`* |
 | bg_color | Sets the background color of the splash screen e.g `#e6e6f9` | *`string`* | `#fffff`|
 | text_color | Sets the text color of the text content on the splash screen | *`string`* | *`black`*|
-| imgPath | Adds a custom image to the content of the splash screen from the *`src`* folder in the vue app. Pass in the relative path to your image resource e.g `imgPath: "./assets/splash.png"` | *`string`* | none|
+| imgPath | Adds a custom image to the content of the splash screen Pass in the relative path to your image resource e.g `imgPath: "/src/assets/splash.png"` | *`string`* | none|
 | imglink | To be used when using external images not in your vue app e.g <br> `imglink: "https://res.cloudinary.com/ferventdev/image/upload/.../jesse.svg"` | *`string`* | none|
 <br>
 

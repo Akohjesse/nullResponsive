@@ -52,7 +52,7 @@ const getUrl = () => {
   if (customConfig.imglink) {
     return customConfig.imglink;
   } else if (customConfig.imgPath) {
-    return new URL(`/src/${customConfig.imgPath}`, import.meta.url).href;
+    return customConfig.imgPath;
   }
 };
 
