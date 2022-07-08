@@ -91,8 +91,8 @@ $bg-color: v-bind("customConfig.bg_color");
     a {
       text-decoration: none;
       font-size: 15px;
-      color:grey;
-      h3{
+      color: grey;
+      h3 {
         font-size: 17px;
       }
     }
