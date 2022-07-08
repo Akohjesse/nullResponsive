@@ -56,7 +56,7 @@ Pass in the Config props to the component when you place it in <b>any</b> of you
    </script>
 ```
 <br>
-Or you can pass in the config options when installing in your main ts or js file 
+Or you can pass in the config options when installing globally in your main ts or js file 
 
 <br>
 <br>
