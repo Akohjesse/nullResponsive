@@ -66,6 +66,8 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@700&family=Josefin+Sans:wght@700&display=swap");
+$color: v-bind("customConfig.text_color");
+$bg-color: v-bind("customConfig.bg_color");
 * {
   margin: 0px;
   font-family: "Josefin sans";
@@ -76,7 +78,7 @@ onMounted(() => {
   position: fixed;
   height: 100vh;
   z-index: 1000;
-  background-color: v-bind("customConfig.bg_color");
+  background-color: $bg-color;
   top: 0;
   left: 0;
   right: 0;
@@ -84,13 +86,15 @@ onMounted(() => {
   overflow: hidden;
   .npm-link {
     position: absolute;
-    bottom: 0;
+    top: 0;
+    right: 0;
     a {
       text-decoration: none;
-      h3 {
-        color: v-bind("customConfig.text_color");
+      font-size: 15px;
+      color:grey;
+      h3{
+        font-size: 17px;
       }
-      font-size: 18px;
     }
   }
   .null_container {
@@ -108,7 +112,7 @@ onMounted(() => {
       font-size: 2.2em;
       padding: 0 2rem;
       text-align: center;
-      color: v-bind("customConfig.text_color");
+      color: $color;
       @media screen and (max-width: 480px) {
         font-size: 1.5em;
       }

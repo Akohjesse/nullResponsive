@@ -44,6 +44,7 @@
   "peerDependencies": {
     "vue": "^3.2.37"
   },
+  "license": "MIT",
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",
     "@types/node": "^16.11.41",
