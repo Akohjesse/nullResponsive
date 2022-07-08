@@ -94,6 +94,7 @@ $bg-color: v-bind("customConfig.bg_color");
       color: grey;
       h3 {
         font-size: 17px;
+        color: grey;
       }
     }
   }
